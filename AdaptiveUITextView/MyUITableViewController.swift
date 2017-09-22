@@ -14,8 +14,6 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
 
     var selectedIndexPath: IndexPath!
     let imagePickerController = UIImagePickerController()
-
-
     @IBOutlet var uiTableView: UITableView!
     
     override func viewDidLoad() {
@@ -53,8 +51,7 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
         present(imagePickerController, animated: true, completion: nil)
     }
     
-    func openCamera()
-    {
+    func openCamera() {
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera))
         {
             imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
@@ -69,8 +66,7 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
         }
     }
     
-    func openGallary()
-    {
+    func openGallary() {
         imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         imagePickerController.allowsEditing = true
         self.present(imagePickerController, animated: true, completion: nil)
@@ -156,3 +152,17 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
     }
 
 }
+        
+       // NotificationCenter.default.addObserver(self, selector: #selector(x), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+
+//    func x(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            uiTable.overridePoint = CGPoint(x: 0.0, y: keyboardSize.height+24.0)
+////            uiTable.contentInset.bottom += keyboardSize.height
+//        }
+//    }
+
+//        let rect = tableView.rectForRow(at: indexPath)
+//        var point = rect.origin
+//        point.y += rect.height + 24.0
+//        uiTable.scrollToRow(at: indexPath, at: UITableViewScrollPosition(rawValue: Int(300.0))!, animated: true)

@@ -185,6 +185,33 @@
                                     <outlet property="myImage" destination="dU7-cH-3oN" id="6h3-8i-M6e"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image Cell" rowHeight="220" id="2Tc-BY-BIc" userLabel="Image Cell" customClass="ImageCell" customModule="AdaptiveUITextView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="688" width="375" height="220"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Tc-BY-BIc" id="pe8-94-aNU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X9M-zt-MeW">
+                                            <rect key="frame" x="123" y="45" width="128" height="128"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="X9M-zt-MeW" secondAttribute="height" multiplier="1:1" id="Hjv-Cq-gFP"/>
+                                                <constraint firstAttribute="height" constant="128" id="pZN-dw-7sr"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="X9M-zt-MeW" firstAttribute="leading" secondItem="pe8-94-aNU" secondAttribute="leadingMargin" constant="115" id="5Mw-9j-HMz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="X9M-zt-MeW" secondAttribute="bottom" constant="38.5" id="JAG-gZ-ggo"/>
+                                        <constraint firstItem="X9M-zt-MeW" firstAttribute="top" secondItem="pe8-94-aNU" secondAttribute="topMargin" constant="37" id="fs8-NW-K8O"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="X9M-zt-MeW" secondAttribute="trailing" constant="116" id="peA-XH-PTe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myImage" destination="X9M-zt-MeW" id="veb-f9-mzd"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Jec-fU-O64" id="UWq-2L-qXC"/>
