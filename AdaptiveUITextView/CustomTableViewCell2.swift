@@ -1,21 +1,15 @@
 //
-//  CustomTableViewCell.swift
+//  CustomTableViewCell2.swift
 //  AdaptiveUITextView
 //
-//  Created by Amos  on 9/12/17.
+//  Created by Amos  on 9/14/17.
 //  Copyright © 2017 Arun. All rights reserved.
 //
 
 import UIKit
 
-protocol ExpandingCellDelegate {
-    func updateCellHeight (_ indexPath: IndexPath, comment:String)
-}
+class CustomTableViewCell2: UITableViewCell, UITextViewDelegate {
 
-
-class CustomTableViewCell: UITableViewCell, UITextViewDelegate  {
-    
-    
     var delegate: ExpandingCellDelegate!
     var cellIndexPath: IndexPath!
     @IBOutlet weak var textView: UITextView!
@@ -45,5 +39,5 @@ class CustomTableViewCell: UITableViewCell, UITextViewDelegate  {
         
         return true
     }
-}
 
+}

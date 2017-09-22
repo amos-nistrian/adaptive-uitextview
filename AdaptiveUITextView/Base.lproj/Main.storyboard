@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -115,6 +116,75 @@
                                     <outlet property="textView" destination="g1S-kF-5JT" id="uhK-F7-BYm"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Custom Table View Cell 2" rowHeight="220" id="4Sz-4K-6HC" customClass="CustomTableViewCell2" customModule="AdaptiveUITextView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="248" width="375" height="220"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Sz-4K-6HC" id="eOr-UL-ik7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYv-My-q30">
+                                            <rect key="frame" x="8" y="53" width="359" height="21"/>
+                                            <color key="backgroundColor" red="0.70989508739999996" green="1" blue="0.1135636805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="aaa" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yji-GM-RFH">
+                                            <rect key="frame" x="67" y="118.5" width="240" height="33"/>
+                                            <color key="backgroundColor" red="0.39680499679999998" green="1" blue="0.93616354199999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="jjp-zz-JQW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SYv-My-q30" secondAttribute="trailing" id="Bl5-6Q-5lO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Yji-GM-RFH" secondAttribute="trailing" constant="60" id="DdR-F3-maR"/>
+                                        <constraint firstItem="SYv-My-q30" firstAttribute="leading" secondItem="eOr-UL-ik7" secondAttribute="leadingMargin" id="bLn-zz-7Jc"/>
+                                        <constraint firstItem="Yji-GM-RFH" firstAttribute="leading" secondItem="eOr-UL-ik7" secondAttribute="leadingMargin" constant="59" id="qBn-jJ-pHk"/>
+                                        <constraint firstItem="Yji-GM-RFH" firstAttribute="top" secondItem="SYv-My-q30" secondAttribute="bottom" constant="44.5" id="vDF-4N-abi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Yji-GM-RFH" secondAttribute="bottom" constant="60" id="xBe-ec-iWh"/>
+                                        <constraint firstItem="SYv-My-q30" firstAttribute="top" secondItem="eOr-UL-ik7" secondAttribute="topMargin" constant="45" id="xuy-bC-ByZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textHeightConstraint" destination="jjp-zz-JQW" id="Hn7-qR-jSG"/>
+                                    <outlet property="textView" destination="Yji-GM-RFH" id="w4X-Hb-lbg"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image Cell" rowHeight="220" id="IoC-AT-Mh8" userLabel="Image Cell" customClass="ImageCell" customModule="AdaptiveUITextView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="468" width="375" height="220"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IoC-AT-Mh8" id="B4n-Rn-k4X">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dU7-cH-3oN">
+                                            <rect key="frame" x="123" y="45" width="128" height="128"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="UgB-Qb-SJl"/>
+                                                <constraint firstAttribute="width" secondItem="dU7-cH-3oN" secondAttribute="height" multiplier="1:1" id="jmi-24-mfY"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="KFi-42-7Pv" appends="YES" id="db3-rr-oIi"/>
+                                            </connections>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dU7-cH-3oN" firstAttribute="top" secondItem="B4n-Rn-k4X" secondAttribute="topMargin" constant="37" id="3A7-iA-kK0"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dU7-cH-3oN" secondAttribute="bottom" constant="38.5" id="VBC-1r-LWX"/>
+                                        <constraint firstItem="dU7-cH-3oN" firstAttribute="leading" secondItem="B4n-Rn-k4X" secondAttribute="leadingMargin" constant="115" id="w2R-nB-XAX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dU7-cH-3oN" secondAttribute="trailing" constant="116" id="x1L-VZ-qKQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myImage" destination="dU7-cH-3oN" id="6h3-8i-M6e"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Jec-fU-O64" id="UWq-2L-qXC"/>
@@ -126,8 +196,13 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2j-q3-LiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KFi-42-7Pv">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="Jec-fU-O64" id="z31-Gm-s4w"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="977" y="425"/>
+            <point key="canvasLocation" x="976.79999999999995" y="424.13793103448279"/>
         </scene>
     </scenes>
 </document>
