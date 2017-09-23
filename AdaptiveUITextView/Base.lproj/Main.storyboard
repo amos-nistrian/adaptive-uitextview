@@ -192,23 +192,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJh-X1-Thy">
-                                            <rect key="frame" x="8" y="99" width="42" height="21"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-w5-xew">
+                                            <rect key="frame" x="132" y="0.0" width="120" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avL-ZZ-kuh" customClass="RatingControl" customModule="AdaptiveUITextView" customModuleProvider="target">
-                                            <rect key="frame" x="87" y="54" width="200" height="110"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yeb-dM-YHW" customClass="RatingControl" customModule="AdaptiveUITextView" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
+                                                </stackView>
+                                            </subviews>
                                         </stackView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="label" destination="HJh-X1-Thy" id="Gcz-AW-pUD"/>
-                                    <outlet property="stack" destination="avL-ZZ-kuh" id="80w-hD-jPj"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -228,6 +222,39 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="976.79999999999995" y="424.13793103448279"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M55-Lt-Rnj">
+            <objects>
+                <viewController id="bnx-fP-lKb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oEl-Sa-fng"/>
+                        <viewControllerLayoutGuide type="bottom" id="kmo-wr-urb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oUh-g8-aqD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqk-C9-p1Z" customClass="RatingControl" customModule="AdaptiveUITextView" customModuleProvider="target">
+                                <rect key="frame" x="49" y="36" width="200" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3HD-CC-kHX">
+                                <rect key="frame" x="132" y="286" width="120" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQq-9N-W5N" customClass="RatingControl" customModule="AdaptiveUITextView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98049094970799544" blue="0.40122193620314983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJb-3b-0yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="538"/>
         </scene>
     </scenes>
 </document>
