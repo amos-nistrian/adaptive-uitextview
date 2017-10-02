@@ -10,8 +10,8 @@ import UIKit
 
 protocol ExpandingCellDelegate {
     func updateCellHeight (_ indexPath: IndexPath, comment:String)
+    //func shouldEnableReorderingInSection(row: Int)
 }
-
 
 class CustomTableViewCell: UITableViewCell, UITextViewDelegate  {
     
@@ -45,5 +45,10 @@ class CustomTableViewCell: UITableViewCell, UITextViewDelegate  {
         
         return true
     }
+    
+//    @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+//        print("Long Press Detected")
+//        delegate?.shouldEnableReorderingInSection(row: cellIndexPath.row)
+//    }
 }
 

@@ -10,17 +10,59 @@
 
 import UIKit
 
-class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
     var selectedIndexPath: IndexPath!
     let imagePickerController = UIImagePickerController()
-    @IBOutlet var uiTableView: UITableView!
-    
+    @IBOutlet var uiTable: UITableView!
+    var longPress = UILongPressGestureRecognizer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.allowsSelection = false
+ 
+        longPress = UILongPressGestureRecognizer(target: self, action: #selector(MyUITableViewController.handleLongPress))
+        longPress.minimumPressDuration = 1.50;
+        uiTable.addGestureRecognizer(longPress)
+
+    }
+
+    
+    // for detecting long press and enabling reordering
+    func handleLongPress(sender: UILongPressGestureRecognizer){
+        let touchPoint = longPress.location(in: uiTable)
+        if let indexPath = uiTable.indexPathForRow(at: touchPoint) {
+            // your code here, get the row for the indexPath or do whatever you want
+            if (indexPath.row < 3) {
+                uiTable.setEditing(true, animated: true)
+                shouldEnableReorderingInSection()
+            }
+        }
     }
     
+    
+    func shouldEnableReorderingInSection(){
+            print("reorder engaged")
+            uiTable.setEditing(true, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        print("Whats up")
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row < 3
+    }
+
+    // For selecting the image
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         
         // Hide the keyboard.
@@ -89,9 +131,9 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
     
     // to update the table view cell height
     func updateCellHeight(_ indexPath: IndexPath, comment: String) {
-        self.uiTableView.beginUpdates()
-        uiTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-        self.uiTableView.endUpdates()
+        self.uiTable.beginUpdates()
+        uiTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        self.uiTable.endUpdates()
     }
     
     // To enable self-sizing table view cells
@@ -111,12 +153,12 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 8
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (indexPath.row == 0 || indexPath.row == 1) {
+        if (indexPath.row < 3) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Custom Table View Cell") as! CustomTableViewCell
             
             cell.textView.text = "AAA"
@@ -130,7 +172,7 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
         }
         
         else {
-            if ( indexPath.row == 2) {
+            if ( indexPath.row == 3) {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Custom Table View Cell 2") as! CustomTableViewCell2
                 
                 cell.textView.text = "AAA"
@@ -149,7 +191,6 @@ class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UII
                 return cell
             }
             else {
-                print("RIGHT HEREEEEEE")
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Stack Cell") as! StackCell
                 
                 return cell
