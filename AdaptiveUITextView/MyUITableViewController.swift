@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+class MyUITableViewController: UITableViewController, ExpandingCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate { 
 
     var selectedIndexPath: IndexPath!
     let imagePickerController = UIImagePickerController()
